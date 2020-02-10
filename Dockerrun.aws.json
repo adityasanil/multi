@@ -25,7 +25,7 @@
     {
       "name": "api",
       "image": "adityasanil/multi-api",
-      "hostname": "back",
+      "hostname": "api",
       "essential": false,
       "memory": 128
     },
