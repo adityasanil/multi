@@ -11,7 +11,7 @@ script:
 after_success:
   - docker build -t adityasanil/multi-client ./client
   - docker build -t adityasanil/multi-nginx ./nginx
-  - docker build -t adityasanil/multi-api  ./api
+  - docker build --build-arg PORT=5000 -t adityasanil/multi-api  ./api
   - docker build -t adityasanil/multi-api2 ./api2
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
