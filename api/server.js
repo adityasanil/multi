@@ -9,7 +9,7 @@ app.get("/name", (req, res) => {
   res.send({ data: "Aditya" });
 });
 
-const port = 5000;
+const port = process.env.PORT;
 app.listen(port, () => console.log(`Listening on ${port}..`));
 
 module.exports = app;
