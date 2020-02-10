@@ -11,23 +11,24 @@ script:
 after_success:
   - docker build -t adityasanil/multi-client ./client
   - docker build -t adityasanil/multi-nginx ./nginx
-  - docker build -t adityasanil/multi-back  ./back
-  - docker build -t adityasanil/multi-back2 ./back2
+  - docker build -t adityasanil/multi-api  ./api
+  - docker build -t adityasanil/multi-api2 ./api2
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push adityasanil/multi-client
   - docker push adityasanil/multi-nginx
-  - docker push adityasanil/multi-back
-  - docker push adityasanil/multi-back2
-  # deploy:
-  #   provider: elasticbeanstalk
-  #   region: ap-south-1
-  #   app: multi
-  #   env: Multi-env
-  #   bucket_name: elasticbeanstalk-ap-south-1-688502995527
-  #   bucket_path: far-ebs
-  #   on:
-  #     branch: master
-  #   access_key_id: $AWS_ACCESS_KEY
-  #   secret_access_key:
-  #     secure: $AWS_SECRET_KEY
+  - docker push adityasanil/multi-api
+  - docker push adityasanil/multi-api2
+
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: multi
+  env: Multi-env
+  bucket_name: elasticbeanstalk-ap-south-1-688502995527
+  bucket_path: far-ebs
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
