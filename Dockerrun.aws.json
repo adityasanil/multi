@@ -27,8 +27,7 @@
       "image": "adityasanil/multi-api",
       "hostname": "api",
       "essential": false,
-      "memory": 128,
-      "command": ["docker run -e PORT=5000 adityasanil/multi-api"]
+      "memory": 128
     },
     {
       "name": "api2",
