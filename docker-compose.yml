@@ -10,20 +10,20 @@ services:
   api2:
     build:
       dockerfile: Dockerfile.dev
-      context: ./back2
+      context: ./api2
     volumes:
       - /usr/app/node_modules
-      - ./back2:/usr/app
+      - ./api2:/usr/app
   api:
     build:
       dockerfile: Dockerfile.dev
-      context: ./back
+      context: ./api
     volumes:
       - /usr/app/node_modules
-      - ./back:/usr/app
+      - ./api:/usr/app
   client:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./client
     volumes:
       - /usr/app/node_modules
