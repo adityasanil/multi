@@ -5,6 +5,9 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Home page of api_2");
+});
 app.get("/surname", (req, res) => {
   res.send({ surname: "Sanil" });
 });
