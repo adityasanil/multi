@@ -19,15 +19,15 @@ script:
 #   - docker push adityasanil/multi-api
 #   - docker push adityasanil/multi-api2
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: us-east-1
-#   app: 15cacb
-#   env: 15cacb-env
-#   bucket_name: elasticbeanstalk-ap-south-1-688502995527
-#   bucket_path: far-ebs
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key:
-#     secure: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: 15cacb
+  env: 15cacb-env
+  bucket_name: elasticbeanstalk-us-east-1-688502995527
+  bucket_path: 15cacb-env
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
