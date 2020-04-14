@@ -14,7 +14,11 @@ class Api extends Component {
   }
 
   render() {
-    return <Fragment>Name:{this.state.data}</Fragment>;
+    return (
+      <Fragment>
+        Name:{this.state.data} {this.state.surname}
+      </Fragment>
+    );
   }
 }
 

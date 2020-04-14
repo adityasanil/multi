@@ -1,40 +1,40 @@
-// {
-//   "AWSEBDockerrunVersion": 2,
-//   "containerDefinitions": [
-//     {
-//       "name": "client",
-//       "image": "adityasanil/multi-client",
-//       "hostname": "client",
-//       "essential": false,
-//       "memory": 128
-//     },
-//     {
-//       "name": "nginx",
-//       "image": "adityasanil/multi-nginx",
-//       "hostname": "nginx",
-//       "essential": true,
-//       "portMappings": [
-//         {
-//           "hostPort": 80,
-//           "containerPort": 80
-//         }
-//       ],
-//       "links": ["client", "api", "api2"],
-//       "memory": 128
-//     },
-//     {
-//       "name": "api",
-//       "image": "adityasanil/multi-api",
-//       "hostname": "api",
-//       "essential": false,
-//       "memory": 128
-//     },
-//     {
-//       "name": "api2",
-//       "image": "adityasanil/multi-api2",
-//       "hostname": "api2",
-//       "essential": false,
-//       "memory": 128
-//     }
-//   ]
-// }
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "adityasanil/multi-client",
+      "hostname": "client",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "nginx",
+      "image": "adityasanil/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "api", "api2"],
+      "memory": 128
+    },
+    {
+      "name": "api",
+      "image": "adityasanil/multi-api",
+      "hostname": "api",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "api2",
+      "image": "adityasanil/multi-api2",
+      "hostname": "api2",
+      "essential": false,
+      "memory": 128
+    }
+  ]
+}
