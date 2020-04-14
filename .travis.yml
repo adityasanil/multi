@@ -7,26 +7,26 @@ before_install:
 
 script:
   - docker run adityasanil/react-test npm test -- --coverage --watchAll=false
-# after_success:
-#   - docker build -t adityasanil/multi-client ./client
-#   - docker build -t adityasanil/multi-nginx ./nginx
-#   - docker build --build-arg PORT=5000 -t adityasanil/multi-api  ./api
-#   - docker build -t adityasanil/multi-api2 ./api2
 
-#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-#   - docker push adityasanil/multi-client
-#   - docker push adityasanil/multi-nginx
-#   - docker push adityasanil/multi-api
-#   - docker push adityasanil/multi-api2
+after_success:
+  - docker build -t adityasanil/multi-client ./client
+  - docker build -t adityasanil/multi-nginx ./nginx
+  - docker build --build-arg PORT=5000 -t adityasanil/multi-api  ./api
+  - docker build -t adityasanil/multi-api2 ./api2
 
-deploy:
-  provider: elasticbeanstalk
-  region: us-east-1
-  app: 15cacb
-  env: 15cacb-env
-  bucket_name: elasticbeanstalk-us-east-1-688502995527
-  bucket_path: 15cacb-env
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push adityasanil/multi-client
+  - docker push adityasanil/multi-nginx
+  - docker push adityasanil/multi-api
+  - docker push adityasanil/multi-api2
+# deploy:
+#   provider: elasticbeanstalk
+#   region: us-east-1
+#   app: 15cacb
+#   env: 15cacb-env
+#   bucket_name: elasticbeanstalk-us-east-1-688502995527
+#   bucket_path: 15cacb-env
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: "$AWS_SECRET_KEY"
