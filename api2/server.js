@@ -12,7 +12,7 @@ app.get("/surname", (req, res) => {
   res.send({ surname: "API 2" });
 });
 
-const port = 5000;
+const port = 8080;
 app.listen(port, () => console.log(`Listening on ${port}..`));
 
 module.exports = app;
