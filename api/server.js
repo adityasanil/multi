@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/name", (req, res) => {
-  res.send({ data: "Aditya" });
+  res.send({ data: "API 1" });
 });
 
 const port = 5000;

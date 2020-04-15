@@ -16,7 +16,8 @@ class Api extends Component {
   render() {
     return (
       <Fragment>
-        Name:{this.state.data} {this.state.surname}
+        Hello from :{this.state.data}
+        Hello from :{this.state.surname}
       </Fragment>
     );
   }
